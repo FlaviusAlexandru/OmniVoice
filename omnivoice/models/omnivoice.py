@@ -268,11 +268,11 @@ class OmniVoiceConfig(PretrainedConfig):
 
 
 def _resolve_model_path(name_or_path: str) -> str:
-    if os.path.isdir(name_or_path):
-        return name_or_path
-    from huggingface_hub import snapshot_download
+    # Fork change: keep a permanent local copy under models/ instead of
+    # re-resolving through the Hugging Face cache every run.
+    from omnivoice.utils.model_store import resolve_model_path
 
-    return snapshot_download(name_or_path)
+    return resolve_model_path(name_or_path)
 
 
 class OmniVoice(PreTrainedModel):

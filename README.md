@@ -20,6 +20,10 @@ OmniVoice is a state-of-the-art massively multilingual zero-shot text-to-speech 
 
 **Contents**: [Key Features](#key-features) | [Installation](#installation) | [Quick Start](#quick-start) | [Python API](#python-api) | [Command-Line Tools](#command-line-tools) | [Training & Evaluation](#training--evaluation) | [Discussion](#discussion--communication) | [Citation](#citation)
 
+> **Fork note (local model store):** models are kept in `models/` inside this checkout (or `$OMNIVOICE_MODELS_DIR`)
+> after the first run, copied from the Hugging Face cache or downloaded once, and loaded from there with no network
+> access afterwards. See `omnivoice/utils/model_store.py`.
+
 ## Key Features
 
 - **600+ Languages Supported**: The broadest language coverage among zero-shot TTS models ([full list](docs/languages.md)).
